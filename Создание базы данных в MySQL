@@ -1,0 +1,5 @@
+# Вход в MySQL
+mysql -u root -p
+
+# Создаем базу данных
+CREATE DATABASE Друзья_человека;
