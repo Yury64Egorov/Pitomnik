@@ -1,0 +1,40 @@
+class Animal:
+    def __init__(self, name, animal_type, commands=None):
+        self.name = name
+        self.animal_type = animal_type
+        self.commands = commands or []
+
+    def add_command(self, command):
+        self.commands.append(command)
+
+    def get_commands(self):
+        return self.commands
+
+
+class AnimalRegistry:
+    def __init__(self):
+        self.animals = []
+
+    def add_animal(self, animal):
+        self.animals.append(animal)
+
+    def list_animals(self):
+        for animal in self.animals:
+            print(f"{animal.name} ({animal.animal_type}): {', '.join(animal.get_commands())}")
+
+    def train_animal(self, animal_name, command):
+        for animal in self.animals:
+            if animal.name == animal_name:
+                animal.add_command(command)
+                print(f"{animal_name} обучен команде: {command}")
+                return
+        print(f"Животное {animal_name} не найдено.")
+
+
+# Пример использования
+registry = AnimalRegistry()
+registry.add_animal(Animal("Бобик", "Собака"))
+registry.add_animal(Animal("Мурка", "Кошка"))
+
+registry.train_animal("Бобик", "Сидеть")
+registry.list_animals()
