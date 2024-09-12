@@ -1,0 +1,5 @@
+# Устанавливаем .deb пакет  
+sudo dpkg -i mypackage.deb
+
+# Удаляем пакет
+sudo dpkg -r mypackage
