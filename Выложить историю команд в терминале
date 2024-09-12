@@ -1,0 +1,7 @@
+# Записываем историю команд в файл
+history > history.txt
+
+# Выложить на GitHub
+git add history.txt
+git commit -m "Добавлена история команд"
+git push
