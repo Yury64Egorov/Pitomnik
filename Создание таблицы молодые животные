@@ -1,0 +1,4 @@
+CREATE TABLE Молодые_животные AS
+SELECT *, TIMESTAMPDIFF(MONTH, дата_рождения, CURDATE()) AS возраст_в_месяцах
+FROM Животные
+WHERE DATEDIFF(CURDATE(), дата_рождения) BETWEEN 365 AND 1095;
