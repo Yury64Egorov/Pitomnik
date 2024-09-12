@@ -1,0 +1,2 @@
+CREATE TABLE Все_животные AS
+SELECT * FROM Животные;
