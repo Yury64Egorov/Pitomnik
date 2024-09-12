@@ -1,0 +1,20 @@
+USE Друзья_человека;
+
+CREATE TABLE Животные (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    имя VARCHAR(100),
+    вид VARCHAR(100),
+    дата_рождения DATE
+);
+
+CREATE TABLE Домашние_животные (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    животное_id INT,
+    FOREIGN KEY (животное_id) REFERENCES Животные(id)
+);
+
+CREATE TABLE Вьючные_животные (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    животное_id INT,
+    FOREIGN KEY (животное_id) REFERENCES Животные(id)
+);
